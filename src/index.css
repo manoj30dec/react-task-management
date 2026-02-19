@@ -1,13 +1,55 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+a{
+    @apply text-blue-600
+}
+.form-horizontal{
+    @apply block;
+}
+.form-horizontal .row{
+    @apply flex gap-4 w-full;
+}
+.form-horizontal .row .col{
+    @apply flex flex-col  w-1/3;
+}
+.form-horizontal .row label{
+    @apply block mb-1;
+}
+.form-horizontal .row input{
+    @apply w-full
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input, select, textarea{
+    @apply border border-solid border-slate-400 py-1 px-2;
+}
+button{
+    @apply bg-blue-600 text-white border-none rounded py-2 px-4;
+}
+button.disabled{
+    @apply bg-gray-400
+}
+.error{
+    @apply text-red-600;
+}
+.checkbox{
+    @apply mr-2 w-[24px] h-[24px]
+}
+.markAsRead{
+    @apply bg-gray-500 cursor-not-allowed opacity-[0.5];
+}
+.table{
+    width: 100%;
+    td, th{
+        @apply border border-gray-600 px-2 py-1;
+    }
+    tr{
+        @apply cursor-pointer;
+    }
+    tr:hover{
+        @apply bg-slate-200;
+    }
+}
+.heading1{
+    @apply text-[32px] font-bold mb-4;
 }

@@ -1,15 +1,50 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store/store';
+import './commonStyle.css';
 import './index.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import DashBoard from './components/DashBoard/DashBoard';
+import EditTask from './components/EditTask/EditTask';
+import TaskDetail from './components/TaskDetail/TaskDetail';
+import UseReducerExample from './components/UseReducerExample/UseReducerExample';
+import WindowDimensions from './components/WindowDimensions/WindowDimensions';
+import SendParent from './components/SendParent/SendParent';
+import SimpleUpdate from './components/SimpleUpdate/SimpleUpdate';
+import Search from './components/Search/Search';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+const getTitle = (obj: any) => {
+  return obj;
+};
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <BrowserRouter>
+        {/* <App /> */}
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route index element={<DashBoard />} />
+            <Route path="/edit/:id" element={<EditTask />} />
+            <Route path="/detail/:id" element={<TaskDetail />} />
+            <Route path="/usereducer" element={<UseReducerExample />} />
+            <Route path="/simple-update" element={<SimpleUpdate />} />
+            <Route path="/use-callback" element={<Search />} />
+            <Route path="/windowsizeteller" element={<WindowDimensions />} />
+            <Route
+              path="/Sent-to-parent"
+              element={<SendParent color={'Red'} getTitle={getTitle} />}
+            />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
