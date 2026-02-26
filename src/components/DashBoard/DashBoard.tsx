@@ -160,8 +160,10 @@ const DashBoard = () => {
         </tbody>
       </table>
       {
+      
         confirmDialog.open && <ConfirmDialog id={confirmDialog.id} user={confirmDialog.user} todo={confirmDialog.todo} onClick={isConfirmed} />
       }
+ 
     </>
   );
 };
