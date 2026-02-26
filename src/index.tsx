@@ -16,6 +16,9 @@ import WindowDimensions from './components/WindowDimensions/WindowDimensions';
 import SendParent from './components/SendParent/SendParent';
 import SimpleUpdate from './components/SimpleUpdate/SimpleUpdate';
 import Search from './components/Search/Search';
+import BuggyComponent from './components/BuggyComponent/BuggyComponent';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import DemoCounter from './components/DemoCounter/DemoCounter';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -41,6 +44,15 @@ root.render(
               path="/Sent-to-parent"
               element={<SendParent color={'Red'} getTitle={getTitle} />}
             />
+            {/* <Route path="/buggy-component" element={<BuggyComponent />} /> */}
+            <Route path="/buggy-component" 
+              element={
+                <ErrorBoundary>
+                  <BuggyComponent />
+                </ErrorBoundary>
+              } 
+            />
+            <Route path="/demo-counter" element={<DemoCounter />} />
           </Route>
         </Routes>
       </BrowserRouter>

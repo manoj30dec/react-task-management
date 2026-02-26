@@ -112,6 +112,24 @@ function Header() {
                       Up lifting
                     </Link>
                   </li>
+                  <li className="max-lg:border-b max-lg:py-3">
+                    <Link
+                      to={'/buggy-component'}
+                      className="hover:text-[#007bff] font-semibold text-[#007bff] block text-[15px]"
+                    >
+                      Error Boundary Example
+                    </Link>
+                    
+                  </li>
+                  <li className="max-lg:border-b max-lg:py-3">
+                    <Link
+                      to={'/demo-counter'}
+                      className="hover:text-[#007bff] font-semibold text-[#007bff] block text-[15px]"
+                    >
+                      Demo Counter
+                    </Link>
+                    
+                  </li>
                 </ul>
               </div>
             </div>

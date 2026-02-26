@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from "react";
 
 function Search() {
     const [query, setQuery] = useState("");
-
     // function har render par naya banega
     // const fetchData = () => {
     //     console.log("API call for:", query);
@@ -13,7 +12,7 @@ function Search() {
 
     useEffect(() => {
         fetchData();
-    }, [fetchData]); // dependency mein function
+    }, [fetchData]);
 
     return (
         <div>
