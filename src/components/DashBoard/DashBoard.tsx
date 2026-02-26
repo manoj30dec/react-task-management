@@ -90,7 +90,7 @@ const DashBoard = () => {
       
       <h1 className='heading1'>Task List</h1>
 
-      <table className="table">
+      <table className="table table-bordered">
         <thead>
           <tr>
             <th scope="col">Sr. No.</th>
@@ -152,7 +152,7 @@ const DashBoard = () => {
               <td>{task.startDate}</td>
               <td>{task.endDate}</td>
               <td>
-                <button className="mr-2" onClick={(e)=>editTask(task.id,e)}>Edit</button>
+                <button className="me-2" onClick={(e)=>editTask(task.id,e)}>Edit</button>
                 <button  onClick={(e)=>deleteWork(task.id,task.user,task.todo,e)}>Delete</button>
               </td>
             </tr>
