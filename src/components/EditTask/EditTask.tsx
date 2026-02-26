@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchTaskList, editTask } from '../../store/reducers/taskSlice';
@@ -46,7 +46,7 @@ const EditTask = () => {
     if (singleRecord) {
       setRecord(singleRecord);
     }
-  }, [tasksList]);
+  }, [tasksList, param]);
 //   console.log(record);
 
   const handleFormSubmit = (e:FormEvent<HTMLFormElement>):void => {

@@ -43,7 +43,7 @@ const TaskDetail = () => {
     if (singleRecord) {
       setRecord(singleRecord);
     }
-  }, [tasksList]);
+  }, [tasksList, param]);
 
 
 
