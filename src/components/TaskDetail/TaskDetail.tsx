@@ -53,7 +53,7 @@ const TaskDetail = () => {
       <h1 className="heading1">Task Detail</h1>
 
 
-<div className="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-full py-6 max-w-lg rounded-lg font-[sans-serif] overflow-hidden mt-4">
+<div className="card p-4">
   <div className="flex items-center gap-2 px-6">
     <h3 className="text-xl text-gray-800 font-bold flex-1">Assigned  to : {record.user}</h3>
   </div>
@@ -67,7 +67,7 @@ const TaskDetail = () => {
   </div>
 </div>
 <br></br>
-<Link to="/" className=" px-5 py-2.5 rounded-lg text-white text-sm tracking-wider font-medium border border-current outline-none bg-blue-700 hover:bg-blue-800 active:bg-blue-700">Back to Dashboard</Link>
+<Link to="/" className="btn btn-primary">Back to Dashboard</Link>
 
 
 
