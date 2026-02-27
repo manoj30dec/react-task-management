@@ -1,3 +1,7 @@
+# email and password for login
+
+"email": john@mail.com
+"password": changeme
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

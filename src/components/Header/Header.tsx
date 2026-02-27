@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../context/useAuth';
 function Header() {
   const [menu, setMenu] = useState(true);
   const toggleOpen = () => {
@@ -10,13 +11,15 @@ function Header() {
     console.log('toggleClose');
     setMenu(false);
   };
+  const { logout } = useAuth();
   return (
     <>
       <header className="border-b font-[sans-serif] tracking-wide relative z-50">
-        <section className="py-3 bg-[#1d294f] text-white text-center px-10">
-          <p className="text-sm">
+        <section className="py-3 bg-[#1d294f] text-white text-center px-10 d-flex justify-between">
+          <p className="text-sm ">
             Task Management | Taks View, Task Details, and mark
           </p>
+          <button className='btn btn-secondary'  onClick={logout}>Logout</button>
         </section>
 
         <div className="flex flex-wrap items-center gap-4 px-10 py-4 relative bg-white min-h-[70px]">
