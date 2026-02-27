@@ -109,7 +109,7 @@ function Header() {
                   </li>
                   <li className="max-lg:border-b max-lg:py-3">
                     <Link
-                      to={'/Sent-to-parent'}
+                      to={'/up-lifting'}
                       className="hover:text-[#007bff] font-semibold text-[#007bff] block text-[15px]"
                     >
                       Up lifting

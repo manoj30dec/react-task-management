@@ -162,7 +162,7 @@ const EditTask = () => {
         </div>
         <div className="row mt-2">
           <div className="col">
-            <button>Submit</button>
+            <button>Save and Back</button>
           </div>
         </div>
       </form>
