@@ -6,7 +6,7 @@ import EditTask from './components/EditTask/EditTask';
 import TaskDetail from './components/TaskDetail/TaskDetail';
 import UseReducerExample from './components/UseReducerExample/UseReducerExample';
 import WindowDimensions from './components/WindowDimensions/WindowDimensions';
-import SendParent from './components/SendParent/SendParent';
+import UpliftingParent from './components/UpliftingParent/UpliftingParent';
 import SimpleUpdate from './components/SimpleUpdate/SimpleUpdate';
 import Search from './components/Search/Search';
 import BuggyComponent from './components/BuggyComponent/BuggyComponent';
@@ -19,9 +19,6 @@ import NotFound from './components/NotFound/NotFound';
 
 
 function App() {
-  const getTitle = (obj: any) => {
-  return obj;
-};
   return (
     <>
         <Routes>
@@ -41,8 +38,8 @@ function App() {
                 <Route path="/use-callback" element={<Search />} />
                 <Route path="/windowsizeteller" element={<WindowDimensions />} />
                 <Route
-                  path="/Sent-to-parent"
-                  element={<SendParent color={'Red'} getTitle={getTitle} />}
+                  path="/up-lifting"
+                  element={<UpliftingParent  />}
                 />
                  <Route path="/demo-counter" element={<DemoCounter />} />
               </Route>
