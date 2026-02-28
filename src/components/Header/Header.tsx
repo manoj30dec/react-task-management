@@ -126,12 +126,19 @@ function Header() {
                   </li>
                   <li className="max-lg:border-b max-lg:py-3">
                     <Link
-                      to={'/demo-counter'}
+                      to={'/demo-redux-counter'}
                       className="hover:text-[#007bff] font-semibold text-[#007bff] block text-[15px]"
                     >
-                      Demo Counter
+                      Demo Redux Counter
                     </Link>
-                    
+                  </li>
+                  <li className="max-lg:border-b max-lg:py-3">
+                    <Link
+                      to={'/demo-infinite-scrolling'}
+                      className="hover:text-[#007bff] font-semibold text-[#007bff] block text-[15px]"
+                    >
+                      Demo Infinite Scrolling
+                    </Link>
                   </li>
                 </ul>
               </div>
