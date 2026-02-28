@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useState } from 'react';
 import UpliftingChild from './UpliftingChild';
 export default function UpliftingParent(props) {
   const [color, setColor] = useState("yellowgreen")

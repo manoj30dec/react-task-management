@@ -16,6 +16,7 @@ import PublicRoute from './components/PublicRoute';
 import Login from './components/Login/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import NotFound from './components/NotFound/NotFound';
+import InfiniteScrolling from './components/InfiniteScrolling/InfiniteScrolling';
 
 
 function App() {
@@ -41,7 +42,8 @@ function App() {
                   path="/up-lifting"
                   element={<UpliftingParent  />}
                 />
-                 <Route path="/demo-counter" element={<DemoCounter />} />
+                 <Route path="/demo-redux-counter" element={<DemoCounter />} />
+                 <Route path="/demo-infinite-scrolling" element={<InfiniteScrolling />} />
               </Route>
             </Route>
             
