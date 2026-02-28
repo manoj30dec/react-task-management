@@ -28,7 +28,7 @@ const InfiniteScrolling = () => {
     }, [page]);
 
     const lastElementRef = useCallback((node) => {
-        //Agar data load nahi ho raha hai to kuch mat karo
+        //Agar data load ho raha hai to kuch mat karo
         if (loading || !hasMore) {
             return;
         }
@@ -60,11 +60,11 @@ const InfiniteScrolling = () => {
                 if (index === data.length - 1) {
                     return (
                         <div ref={lastElementRef} key={`${item.id}-${index}`}>
-                            {item.title}
+                            {index + 1}={item.title}
                         </div>
                     );
                 }
-                return <div key={`${item.id}-${index}`}>{item.title}</div>;
+                return <div key={`${item.id}-${index}`}>{index + 1}={item.title}</div>;
             })}
             {loading && <p>Loading...</p>}
         </div>
