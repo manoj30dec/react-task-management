@@ -17,6 +17,7 @@ import Login from './components/Login/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import NotFound from './components/NotFound/NotFound';
 import InfiniteScrolling from './components/InfiniteScrolling/InfiniteScrolling';
+import DemoCustomHook from './components/DemoCustomHook/DemoCustomHook';
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
                   element={<UpliftingParent  />}
                 />
                  <Route path="/demo-redux-counter" element={<DemoCounter />} />
+                 <Route path="/demo-custom-hook" element={<DemoCustomHook />} />
                  <Route path="/demo-infinite-scrolling" element={<InfiniteScrolling />} />
               </Route>
             </Route>

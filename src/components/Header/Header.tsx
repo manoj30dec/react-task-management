@@ -57,7 +57,7 @@ function Header() {
               </button>
 
               <div className="lg:flex max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
-                <ul className="lg:flex lg:gap-x-8 max-lg:space-y-2">
+                <ul className="lg:flex gap-4 ">
                   <li className="mb-6 hidden max-lg:block">
                     <Link to="#">
                       <img
@@ -129,9 +129,19 @@ function Header() {
                       to={'/demo-redux-counter'}
                       className="hover:text-[#007bff] font-semibold text-[#007bff] block text-[15px]"
                     >
-                      Demo Redux Counter
+                      Demo Redux Middleware With Counter
                     </Link>
                   </li>
+                  <li className="max-lg:border-b max-lg:py-3">
+                    <Link
+                      to={'/demo-custom-hook'}
+                      className="hover:text-[#007bff] font-semibold text-[#007bff] block text-[15px]"
+                    >
+                      Demo Custom Hook
+                    </Link>
+                  </li>
+                  
+                  
                   <li className="max-lg:border-b max-lg:py-3">
                     <Link
                       to={'/demo-infinite-scrolling'}
