@@ -50,11 +50,11 @@ const DashBoard = () => {
   }, [dispatch, status]);
 
 
-  const editTask=(id:string,e:MouseEvent<HTMLButtonElement>)=>{
+  const editTask=(id:string,e:MouseEvent<HTMLElement>)=>{
     e.stopPropagation();
     navigate(`/edit/${id}`)
   }
-  const deleteWork=(id:string,user:string,todo:string,e:MouseEvent<HTMLButtonElement>)=>{
+  const deleteWork=(id:string,user:string,todo:string,e:MouseEvent<HTMLElement>)=>{
     e.stopPropagation()
     setConfirmDialog({
       open:true,
@@ -93,67 +93,70 @@ const DashBoard = () => {
       <table className="table table-bordered">
         <thead>
           <tr>
-            <th scope="col">Sr. No.</th>
+            <th scope="col"  style={{ width: "4%" }}  className='text-center'>Sr. No.</th>
             <th scope="col" className="flex align-middle justify-center">
               Title
               <span className="ml-1">
                   <IconUp width="14" height="14" className="cursor-pointer"  onClick={() => sort('todo', ASCENDING)}/>
                   <IconDown width="14" height="14" className="cursor-pointer" onClick={() => sort('todo', DESCENDING)}  />
                 </span>
-              <button onClick={() => sort('todo', DEFAULT)} className="ml-2 p-1 text-[10px] bg-gray-700">Default Sort</button>
+              <button onClick={() => sort('todo', DEFAULT)} className="ml-2 p-1 text-[10px] bg-gray-700">Reset</button>
             </th>
-            <th scope="col">
+            <th scope="col" style={{ width: "12%" }}>
               <div
                 className="flex align-middle justify-center"
-                
               >
-                Assigned To 
-                         
+                Assigned                         
                 <span className="ml-1">
                   <IconUp width="14" height="14" className="cursor-pointer"  onClick={() => sort('user', ASCENDING)}/>
                   <IconDown width="14" height="14" className="cursor-pointer" onClick={() => sort('user', DESCENDING)}  />
                 </span>
-                <button onClick={() => sort('user', DEFAULT)} className="ml-2 p-1 text-[10px] bg-gray-700">Default Sort</button>
+                <button onClick={() => sort('user', DEFAULT)} className="ml-2 p-1 text-[10px] bg-gray-700">Reset</button>
               </div>
             </th>
-            <th scope="col">
+            <th scope="col" style={{ width: "12%" }}>
               <div className="flex align-middle justify-center">
                 Status
                 <span className="ml-1">
                   <IconUp width="14" height="14" className="cursor-pointer"  onClick={() => sort('status', ASCENDING)}/>
                   <IconDown width="14" height="14" className="cursor-pointer" onClick={() => sort('status', DESCENDING)}  />
                 </span>
-                <button onClick={() => sort('status', DEFAULT)} className="ml-2 p-1 text-[10px] bg-gray-700">Default Sort</button>
+                <button onClick={() => sort('status', DEFAULT)} className="ml-2 p-1 text-[10px] bg-gray-700">Reset</button>
               </div>
             </th>
-            <th scope="col">
+            <th scope="col" style={{ width: "12%" }}>
               <div className="flex align-middle justify-center">
                 Priority
                 <span className="ml-1">
                   <IconUp width="14" height="14" className="cursor-pointer"  onClick={() => sort('priority', ASCENDING)}/>
                   <IconDown width="14" height="14" className="cursor-pointer" onClick={() => sort('priority', DESCENDING)}  />
                 </span>
-                <button onClick={() => sort('priority', DEFAULT)} className="ml-2 p-1 text-[10px] bg-gray-700">Default Sort</button>
+                <button onClick={() => sort('priority', DEFAULT)} className="ml-2 p-1 text-[10px] bg-gray-700">Reset</button>
               </div>
             </th>
-            <th scope="col">Start Date</th>
-            <th scope="col">End Date</th>
-            <th scope="col">Action</th>
+            <th scope="col" style={{ width: "12%" }} className='text-center'>Start Date</th>
+            <th scope="col" style={{ width: "12%" }} className='text-center'>End Date</th>
+            <th scope="col" style={{ width: "12%" }} className='text-center'>Action</th>
           </tr>
         </thead>
         <tbody>
           {task.map((task: any) => (
             <tr key={task.id} onClick={()=>goToDetail(task.id)}>
-              <td className='text-red-800 font-bold'>{task.id}</td>
+              <td className='text-center'>{task.id}</td>
               <td>{task.todo}</td>
-              <td className='text-red-800 font-bold'>{task.email}</td>
+              <td>{task.user}</td>
               <td>{task.status}</td>
               <td>{task.priority}</td>
-              <td>{task.startDate}</td>
-              <td>{task.endDate}</td>
+              <td className='text-center'>{task.startDate}</td>
+              <td className='text-center'>{task.endDate}</td>
               <td>
-                <button className="me-2" onClick={(e)=>editTask(task.id,e)}>Edit</button>
-                <button  onClick={(e)=>deleteWork(task.id,task.user,task.todo,e)}>Delete</button>
+                <div className='d-flex gap-4 justify-center'>
+                  <img className='cursor-pointer' src="/edit_icon.svg" alt="Edit" title='Edit' onClick={(e)=>editTask(task.id,e)}  />
+                  <img className='cursor-pointer' src="/delete_icon.svg" alt="Delete" title='Delete'  onClick={(e)=>deleteWork(task.id,task.user,task.todo,e)} />
+                </div>
+
+                {/* <button className="me-2" onClick={(e)=>editTask(task.id,e)}>Edit</button>
+                <button  onClick={(e)=>deleteWork(task.id,task.user,task.todo,e)}>Delete</button> */}
               </td>
             </tr>
           ))}
