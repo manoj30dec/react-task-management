@@ -1,16 +1,7 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import useAuth from '../../context/useAuth';
 function Header() {
-  const [menu, setMenu] = useState(true);
-  const toggleOpen = () => {
-    console.log('toggleOpen');
-    setMenu(true);
-  };
-  const toggleClose = () => {
-    console.log('toggleClose');
-    setMenu(false);
-  };
   const { logout } = useAuth();
   const [className, setClassName] = useState(false)
   const toggleClass = ()=>{
